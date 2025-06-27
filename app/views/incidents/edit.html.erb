@@ -1,0 +1,23 @@
+<% content_for :title, "Editing incident" %>
+
+<h1>Editing incident</h1>
+
+
+<div class="ui grid">
+  <div class=" two wide column">
+    Incident <%= @incident.id %>
+    <br>
+    <%= @incident.severity.capitalize %>
+  </div>
+  <div class=" eight wide column"><%= render "form", incident: @incident %></div>
+  <div class=" six wide column"></div>
+</div>
+
+
+
+<br>
+
+<div>
+  <%= link_to "Show this incident", @incident %> |
+  <%= link_to "Back to incidents", incidents_path %>
+</div>

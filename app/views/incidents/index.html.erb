@@ -1,0 +1,47 @@
+
+
+<h3>Incidents</h3>
+
+<% if @incidents.count==0%>
+<center><i>No incidents found</i></center>
+<%else%>
+
+
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Verdict</th>
+      <th>Attack Vector</th>
+      <th>Related CVE(s)</th>
+      <th>Severity</th>
+      <!--<th>Log line #</th>-->
+      <th>Artifact(s)</th>
+      <th>AI Insights</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @incidents.reverse.each do |incident| %>
+    <tr>
+      <td data-label="Name"><%= link_to 'INC'+incident.id.to_s, incident %></td>
+      <td data-label="Name"><%= incident.created_at.to_s.sub('UTC','') %></td>
+
+      <td data-label="Name"><%= incident.status %></td>
+      <td data-label="Name"><%= incident.verdict %></td>
+
+      <td data-label="Age"><%= incident.attack_vector %></td>
+      <td data-label="Age"><%= raw(incident.cves) %></td>
+      <td data-label="Age"><%= incident.severity.capitalize %></td>
+      <!--<td data-label="Age"><%= incident.log_line %></td>-->
+      <td data-label="Age" style="word-break: break-word; white-space: normal;"><%= incident.log_line_content %></td>
+      <td data-label="Age"><%= incident.llm_insights %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<p style="color: green"><%= notice %></p>
+
