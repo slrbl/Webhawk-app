@@ -64,6 +64,12 @@ class IncidentsController < ApplicationController
     redirect_to @incident
   end 
 
+  def find_incidents
+
+    @incidents=Incident.where(id:params[:search])
+
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_incident

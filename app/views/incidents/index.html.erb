@@ -1,6 +1,29 @@
 
 
-<h3>Incidents</h3>
+
+
+
+<div class="ui grid">
+  <div class="four wide column"><h3>Incidents</h3></div>
+  <div class="four wide column"></div>
+  <div class="four wide column"></div>
+  <div class="four wide column" style="text-align:right">
+  
+    <div class="ui search">
+      <div class="ui icon input">
+      <%= form_with url: :find_incidents, method: :post, html: { id: 'find_incidents_form' } do %>
+
+        <input class="prompt" type="text" placeholder="Find incident..." name="search" onclick="document.getElementById('find_incidents_form').submit();">
+        <% end %>
+
+        <i class="search icon"></i>
+        </div>
+      <div class="results"></div>
+    </div>
+  
+  </div>
+</div>
+
 
 <% if @incidents.count==0%>
 <center><i>No incidents found</i></center>

@@ -32,5 +32,7 @@ Rails.application.routes.draw do
 
 
   post 'assign_incident', to: 'incidents#assign_incident', as: :assign_incident
+  post 'find_incidents', to: 'incidents#find_incidents', as: :find_incidents
+
   
 end
