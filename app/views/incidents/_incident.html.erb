@@ -23,7 +23,8 @@
       <%= User.find(incident.user_id).email %>
       <% else %>
         <i>This incident has not yet been assigned</i>
-        <button class="ui mini orange button" onclick="confirm('You will be the responsible of this incident');document.getElementById('assign_to_me_form').submit();">Assign to me </button>
+        <br>
+        <button class="ui mini green button" onclick="if (confirm('You will be the responsible of this incident')) {document.getElementById('assign_to_me_form').submit();}">Assign to me </button>
       <% end %>
     </td>
   </tr>

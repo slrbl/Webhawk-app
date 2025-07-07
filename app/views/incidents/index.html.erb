@@ -11,7 +11,7 @@
   
     <div class="ui search">
       <div class="ui icon input">
-      <%= form_with url: :find_incidents, method: :post, html: { id: 'find_incidents_form' } do %>
+      <%= form_with url: :find_incidents, method: :post, html: { id: 'find_incidents_form', class:'ui form'} do %>
 
         <input class="prompt" type="text" placeholder="Find incident..." name="search" onclick="document.getElementById('find_incidents_form').submit();">
         <% end %>
