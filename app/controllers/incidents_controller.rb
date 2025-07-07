@@ -3,8 +3,15 @@ class IncidentsController < ApplicationController
 
   # GET /incidents or /incidents.json
   def index
-    @incidents = Incident.all
+    if params[:search]==nil or params[:search]==''
+      @incidents = Incident.all
+    else
+    @incidents=Incident.where("log_line_content LIKE ?", "%"+params[:search]+"%")
+    end 
   end
+
+
+
 
   # GET /incidents/1 or /incidents/1.json
   def show
