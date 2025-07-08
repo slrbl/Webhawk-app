@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Webhawk App" %></title>
+    <title><%= content_for(:title) || "Webhawk Inc. Management" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -21,12 +21,13 @@
   </head>
 
   <body>
-    <h1>Webhawk</h1>
+    <h2 style="color:rgb(46, 43, 53);"><code>Webhawk Inc. Management</code></h2>
     
 
 
     <div class="ui inverted menu" style="background-color: rgb(46, 43, 53);">
     <a class="item" href='/incidents'><i class="bug icon"></i>Incidents</a>
+    <a class="item" href='/tasks'><i class="tasks icon"></i>My Tasks</a>
       <div class="right menu">
         <% if user_signed_in? %>
           <a class="item"><i class="user circle icon"></i><%= current_user.email %></a>

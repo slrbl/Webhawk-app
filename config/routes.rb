@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
   post 'assign_incident', to: 'incidents#assign_incident', as: :assign_incident
   get 'find_incidents', to: 'incidents#index', as: :find_incidents
+  get 'tasks', to: 'incidents#tasks'
 
   
 end

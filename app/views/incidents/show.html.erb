@@ -3,8 +3,14 @@
 <%= render @incident %>
 
 <div>
-  <%= link_to "Edit this incident", edit_incident_path(@incident) %> |
+<br>
+
+
+          <%= button_to "Work on this incident", edit_incident_path(@incident), :method => :get, :class => "ui mini orange button" %>
+
+
+ <!-- <%= link_to "Edit this incident", edit_incident_path(@incident) %> |
   <%= link_to "Back to incidents", incidents_path %>
 
-  <%= button_to "Destroy this incident", @incident, method: :delete %>
+  <%= button_to "Destroy this incident", @incident, method: :delete %>-->
 </div>

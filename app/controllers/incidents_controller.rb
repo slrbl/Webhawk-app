@@ -11,8 +11,11 @@ class IncidentsController < ApplicationController
   end
 
 
+  def tasks
+    @incidents=Incident.where(user_id:current_user.id) 
+  end
 
-
+  
   # GET /incidents/1 or /incidents/1.json
   def show
   end
