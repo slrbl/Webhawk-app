@@ -37,6 +37,7 @@
     <tr>
       <th>ID</th>
       <th>Date</th>
+      <th>Host</th>
        <th>Owner</th>
       <th>Status</th>
       <th>Verdict</th>
@@ -53,7 +54,7 @@
     <tr>
       <td data-label="Name"><%= link_to 'INC'+incident.id.to_s, incident %></td>
       <td data-label="Name"><%= incident.created_at.to_s.sub('UTC','') %></td>
-
+      <td data-label="Name"><%= incident.host %></td>
       <td data-label="Name"><%= incident.status %></td>
       <td data-label="Name">
       <%= 

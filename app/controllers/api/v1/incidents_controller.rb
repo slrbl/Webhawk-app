@@ -18,7 +18,7 @@ class Api::V1::IncidentsController < ApplicationController
 
 
     def incident_params
-        params.require(:incident).permit(:description, :attack_vector,:log_line,:llm_insights,:severity,:cves,:log_line_content,:status,:verdict)
+        params.require(:incident).permit(:description, :attack_vector,:log_line,:llm_insights,:severity,:cves,:log_line_content,:status,:verdict,:host)
       end
       
 end
