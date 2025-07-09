@@ -1,4 +1,4 @@
-<%= form_with(model: incident) do |form| %>
+<%= form_with(model: incident, class:"ui form") do |form| %>
   <% if incident.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
@@ -12,22 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :my_Notes, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
-  <div>
-    <%= form.label :detected_at, style: "display: block" %>
-    <%= form.text_field :detected_at %>
-  </div>
+
 
   <div>
     <%= form.label :attack_vector, style: "display: block" %>
     <%= form.text_field :attack_vector %>
   </div>
 
+    <div>
+    <%= form.label :verdict, style: "display: block" %>
+    <%= form.text_field :verdict %>
+    </div>
+
+    <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+    </div>
+
+   
   <div>
-    <%= form.submit %>
+          <br>
+    <button class="ui button" type="submit">Update Incident</button>
   </div>
 <% end %>
 

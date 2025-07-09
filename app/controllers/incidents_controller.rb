@@ -15,7 +15,7 @@ class IncidentsController < ApplicationController
     @incidents=Incident.where(user_id:current_user.id) 
   end
 
-  
+
   # GET /incidents/1 or /incidents/1.json
   def show
   end
@@ -27,6 +27,7 @@ class IncidentsController < ApplicationController
 
   # GET /incidents/1/edit
   def edit
+
   end
 
   # POST /incidents or /incidents.json
@@ -88,6 +89,6 @@ class IncidentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def incident_params
-      params.expect(incident: [ :description, :attack_vector ])
+      params.expect(incident: [ :description, :attack_vector, :status, :description, :verdict ])
     end
 end

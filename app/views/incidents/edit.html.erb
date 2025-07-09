@@ -1,13 +1,15 @@
 <% content_for :title, "Editing incident" %>
 
-<h1>Editing incident</h1>
+<h1>INC<%= @incident.id %></h1>
 
 
 <div class="ui grid">
   <div class=" two wide column">
-    Incident <%= @incident.id %>
+    Date: <%= @incident.created_at.to_s.sub('UTC','') %>
     <br>
-    <%= @incident.severity.capitalize %>
+    Owner: <%= User.find(@incident.user_id).email.split('@')[0] %>
+    <br>
+    Severity: <%= @incident.severity.capitalize %>
   </div>
   <div class=" eight wide column"><%= render "form", incident: @incident %></div>
   <div class=" six wide column"></div>
@@ -17,7 +19,9 @@
 
 <br>
 
+<!--
 <div>
   <%= link_to "Show this incident", @incident %> |
   <%= link_to "Back to incidents", incidents_path %>
 </div>
+-->
