@@ -1,7 +1,7 @@
 # Webhawk Web Application
 
 ## About
-The Webhawk web application is a cyber incident management system that was initially developed to handle the incidents detected by Webhawk. 
+The Webhawk web application is a cyber incident management system that was initially developed to handle the incidents detected by Webhawk (https://github.com/slrbl/Intrusion-and-anomaly-detection-with-machine-learning). 
 
 ## Using the API
 How to add a new incident using the API
