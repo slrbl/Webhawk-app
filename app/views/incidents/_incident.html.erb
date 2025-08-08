@@ -6,7 +6,6 @@
 <% end %>
 
 
-
 <table>
   <tr>
     <td width='10%'>ID</td>
@@ -24,7 +23,7 @@
       <% else %>
         <i>This incident has not yet been assigned</i>
         <br>
-        <button class="ui mini green button" onclick="if (confirm('You will be the responsible of this incident')) {document.getElementById('assign_to_me_form').submit();}">Assign to me </button>
+        <button class="ui mini blue button" onclick="if (confirm('You will be the responsible of this incident')) {document.getElementById('assign_to_me_form').submit();}">Assign to me </button>
       <% end %>
     </td>
   </tr>
@@ -38,7 +37,18 @@
   </tr>
   <tr>
     <td>Severity</td>
-    <td><%= incident.severity.capitalize%></td>
+    <td>
+      <% if incident.severity == 'high' %>
+            <div class="ui red horizontal label"><%= incident.severity.capitalize %></div>
+       <% end %>
+       <% if incident.severity == 'medium' %>
+      <div class="ui orange horizontal label"><%= incident.severity.capitalize %></div>
+       <% end %>
+       <% if incident.severity == 'low' %>
+      <div class="ui grey horizontal label"><%= incident.severity.capitalize %></div>
+       <% end %>
+    
+    </td>
   </tr>
   <tr>
     <td>Artifact</td>

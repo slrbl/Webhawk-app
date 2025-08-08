@@ -19,18 +19,27 @@
 
 
   <div>
+    <%= form.label :severity, style: "display: block" %>
+    <%= form.select(:severity, ["high", "medium","low"]) %>
+  </div>
+
+
+  <div>
     <%= form.label :attack_vector, style: "display: block" %>
-    <%= form.text_field :attack_vector %>
+    <%= form.select(:attack_vector, ["Web", "Email","Social Media"]) %>
   </div>
 
     <div>
     <%= form.label :verdict, style: "display: block" %>
-    <%= form.text_field :verdict %>
+
+    <%= form.select(:verdict, ["Confirmed", "False Positive"]) %>
+
+
     </div>
 
     <div>
     <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
+    <%= form.select(:status, ["Open", "Closed"]) %>
     </div>
 
    

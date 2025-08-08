@@ -42,7 +42,7 @@
       <th>Status</th>
       <th>Verdict</th>
       <th>Attack Vector</th>
-      <th>Related CVE(s)</th>
+      <!--<th>Related CVE(s)</th>-->
       <th>Severity</th>
       <!--<th>Log line #</th>-->
       <th>Artifact(s)</th>
@@ -55,7 +55,6 @@
       <td data-label="Name"><%= link_to 'INC'+incident.id.to_s, incident %></td>
       <td data-label="Name"><%= incident.created_at.to_s.sub('UTC','') %></td>
       <td data-label="Name"><%= incident.host %></td>
-      <td data-label="Name"><%= incident.status %></td>
       <td data-label="Name">
       <%= 
         if incident.user_id==nil
@@ -65,11 +64,25 @@
         end 
       %>
       </td>
+      <td data-label="Name"><%= incident.status %></td>
       <td data-label="Name"><%= incident.verdict %></td>
 
       <td data-label="Age"><%= incident.attack_vector %></td>
-      <td data-label="Age"><%= raw(incident.cves) %></td>
-      <td data-label="Age"><%= incident.severity.capitalize %></td>
+      <!--<td data-label="Age"><%= raw(incident.cves) %></td>-->
+      
+      <td data-label="Age">
+      <% if incident.severity == 'high' %>
+      <div class="ui red horizontal label"><%= incident.severity.capitalize %></div>
+       <% end %>
+       <% if incident.severity == 'medium' %>
+      <div class="ui orange horizontal label"><%= incident.severity.capitalize %></div>
+       <% end %>
+       <% if incident.severity == 'low' %>
+      <div class="ui grey horizontal label"><%= incident.severity.capitalize %></div>
+       <% end %>
+        </td>
+
+
       <!--<td data-label="Age"><%= incident.log_line %></td>-->
       <td data-label="Age" style="word-break: break-word; white-space: normal;"><%=  truncate(incident.log_line_content, length: 100)%></td>
       <td data-label="Age"><%= truncate(incident.llm_insights, length: 100) %></td>
